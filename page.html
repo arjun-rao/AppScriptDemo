@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <table style="border:none">
+     <tr>
+       <th></th>
+       <th>Files</th>
+     </tr>
+     <? for (var i = 0; i < approvables.length; i++) { ?>
+       <tr>
+       <td align="center">
+        <? if (approvables[i].approved) { ?>
+          &#x2713;
+        <? } else { ?>
+          <a href="<?= approvables[i].approvalUrl ?>" style="text-decoration:none">&#x25a2;</a>
+         <? } ?>
+         </td>
+         <td>
+          <a href="<?= approvables[i].url ?>" target="_blank"><?= approvables[i].title ?></a>
+         </td>
+        </tr>
+       <? } ?>
+      </table>
+  </body>
+</html>
+
+
